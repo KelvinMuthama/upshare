@@ -22,7 +22,7 @@ import {
 
 const Container = styled.div`
   flex: 1;
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   height: 100%;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
@@ -73,7 +73,14 @@ const Button = styled.button`
   gap: 5px;
 `;
 
-const Menu = () => {
+const Title = styled.h2`
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+`;
+
+const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
@@ -111,6 +118,7 @@ const Menu = () => {
           </Button>
         </Login>
         <Hr />
+        <Title>BEST OF UPSHARE</Title>
         <Item>
           <LibraryMusicOutlined />
           Music
@@ -148,7 +156,7 @@ const Menu = () => {
           <HelpOutlineOutlined />
           Help
         </Item>
-        <Item>
+        <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlined />
           Light Mode
         </Item>
