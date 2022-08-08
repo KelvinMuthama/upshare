@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import CardImage from "../images/card.jpg";
+import Avatar from "../images/avatar.jpg";
 
 const Container = styled.div`
   width: 360px;
@@ -48,17 +50,19 @@ const Info = styled.div`
 
 const Card = () => {
   return (
-    <Container>
-      <Image src={CardImage} />
-      <Details>
-        <ChannelImage />
-        <Texts>
-          <Title>Test Video</Title>
-          <ChannelName>UpShare</ChannelName>
-          <Info>700,334 views . 1 day ago</Info>
-        </Texts>
-      </Details>
-    </Container>
+    <Link to="/video/test" style={{ textDecoration: "none" }}>
+      <Container>
+        <Image src={CardImage} />
+        <Details>
+          <ChannelImage src={Avatar} />
+          <Texts>
+            <Title>Test Video</Title>
+            <ChannelName>UpShare</ChannelName>
+            <Info>700,334 views . 1 day ago</Info>
+          </Texts>
+        </Details>
+      </Container>
+    </Link>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import UpShare from "../images/logo.png";
 import {
   Home,
@@ -84,10 +85,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={UpShare} />
-          UpShare
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={UpShare} />
+            UpShare
+          </Logo>
+        </Link>
         <Item>
           <Home />
           Home
@@ -158,7 +161,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessOutlined />
-          Light Mode
+          {!darkMode ? "Light" : "Dark"} Mode
         </Item>
       </Wrapper>
     </Container>

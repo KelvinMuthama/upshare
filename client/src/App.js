@@ -9,6 +9,7 @@ import Video from "./pages/Video";
 
 const Container = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 
 const Main = styled.div`
@@ -16,8 +17,7 @@ const Main = styled.div`
   background-color: ${({ theme }) => theme.bg};
 `;
 
-const Wrapper = styled.div`
-`;
+const Wrapper = styled.div``;
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
