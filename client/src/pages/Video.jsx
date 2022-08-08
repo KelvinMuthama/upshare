@@ -6,6 +6,7 @@ import {
 } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
+import Avatar from "../images/avatar.jpg";
 
 const Container = styled.div`
   display: flex;
@@ -62,9 +63,48 @@ const Channel = styled.div`
   justify-content: space-between;
 `;
 
-const ChannelInfo = styled.div``;
+const ChannelInfo = styled.div`
+  display: flex;
+  gap: 20px;
+`;
 
-const Subscribe = styled.button``;
+const Image = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+`;
+
+const ChannelDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+  color: ${({ theme }) => theme.text};
+`;
+
+const ChannelName = styled.span`
+  font-weight: 500;
+`;
+
+const ChannelCounter = styled.span`
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: ${({ theme }) => theme.textSoft};
+  font-size: 12px;
+`;
+
+const Description = styled.p`
+  font-size: 14px;
+`;
+
+const Subscribe = styled.button`
+  background-color: #007aff;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  height: max-content;
+  padding: 10px 20px;
+  cursor: pointer;
+`;
 
 const Video = () => {
   return (
@@ -100,6 +140,22 @@ const Video = () => {
           </Buttons>
         </Details>
         <Hr />
+        <Channel>
+          <ChannelInfo>
+            <Image src={Avatar} />
+            <ChannelDetail>
+              <ChannelName>UpShare</ChannelName>
+              <ChannelCounter>300K subscribers</ChannelCounter>
+              <Description>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Provident amet enim earum sit porro nisi voluptatibus
+                repellendus fugit obcaecati rerum similique consequatur est,
+                soluta cupiditate dolor dolore, quia praesentium at?
+              </Description>
+            </ChannelDetail>
+          </ChannelInfo>
+          <Subscribe>SUBSCRIBE</Subscribe>
+        </Channel>
       </Content>
       <Recommendation>recommendation</Recommendation>
     </Container>
