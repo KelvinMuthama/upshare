@@ -6,13 +6,15 @@ import Avatar from "../images/avatar.jpg";
 
 const Container = styled.div`
   width: 360px;
-  margin-bottom: 45px;
+  margin-bottom: ${(props) => (props.type === "sm" ? "10px" : "45px")};
   cursor: pointer;
+  display: ${(props) => props.type === "sm" && "flex"};
+  gap: 10px;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: 202px;
+  height: ${(props) => (props.type === "sm" ? "120px" : "202px")};
   background-color: #999;
 `;
 
@@ -27,6 +29,7 @@ const ChannelImage = styled.img`
   height: 36px;
   border-radius: 50%;
   background-color: #999;
+  display: ${(props) => props.type === "sm" && "none"};
 `;
 
 const Texts = styled.div``;
@@ -48,13 +51,13 @@ const Info = styled.div`
   color: ${({ theme }) => theme.textSoft};
 `;
 
-const Card = () => {
+const Card = ({ type }) => {
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>
-      <Container>
-        <Image src={CardImage} />
-        <Details>
-          <ChannelImage src={Avatar} />
+      <Container type={type}>
+        <Image type={type} src={CardImage} />
+        <Details type={type}>
+          <ChannelImage type={type} src={Avatar} />
           <Texts>
             <Title>Test Video</Title>
             <ChannelName>UpShare</ChannelName>
