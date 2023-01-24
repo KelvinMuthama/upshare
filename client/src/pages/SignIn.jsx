@@ -33,6 +33,7 @@ const Input = styled.input`
   padding: 10px;
   background-color: transparent;
   width: 100%;
+  color: ${({ theme }) => theme.textSoft};
 `;
 
 const Button = styled.button`
